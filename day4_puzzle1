@@ -45,25 +45,9 @@ for num in nums:
     if 5 in col5:
         winner = ('col5', col5.index(5))
         break
-    row1 = [sum(hash[i:i + 5]) for i in range(0, len(hash), 5)]
-    row2 = [sum(hash[i:i + 5]) for i in range(1, len(hash), 5)]
-    row3 = [sum(hash[i:i + 2]) for i in range(2, len(hash), 5)]
-    row4 = [sum(hash[i:i + 5]) for i in range(3, len(hash), 5)]
-    row5 = [sum(hash[i:i + 5]) for i in range(4, len(hash), 5)]
-    if 5 in row1:
-        winner = ('row1', row1.index(5) // 5)
-        break
-    if 5 in row2:
-        winner = ('row2', row2.index(5) // 5)
-        break
-    if 5 in row3:
-        winner = ('row3', row3.index(5) // 5)
-        break
-    if 5 in row4:
-        winner = ('row4', row4.index(5) // 5)
-        break
-    if 5 in row5:
-        winner = ('row5', row5.index(5) // 5)
+    rows = [sum(hash[i:i + 5]) for i in range(0, len(hash), 5)]
+    if 5 in rows:
+        winner = ('rows', rows.index(5) // 5)
         break
 
 idx = winner[1]
